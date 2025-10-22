@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - AnekDotes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 32px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #1a1a1a;
+        }
+
+        main {
+            padding: 80px 0;
+        }
+
+        .intro {
+            max-width: 720px;
+            margin: 0 auto 100px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .intro-text {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.8;
+            margin-top: 32px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+            margin-top: 80px;
+        }
+
+        .team-member {
+            padding: 40px 32px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 600;
+            color: #999;
+        }
+
+        .team-member h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .team-member .role {
+            font-size: 15px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .mission {
+            max-width: 800px;
+            margin: 120px auto 0;
+            padding: 48px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .mission h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .mission p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 24px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .intro-text {
+                font-size: 18px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .mission {
+                padding: 32px 24px;
+            }
+
+            .mission h2 {
+                font-size: 28px;
+            }
+
+            .mission p {
+                font-size: 16px;
+            }
+
+            main {
+                padding: 48px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">AnekDotes</a>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html" class="active">Who We Are</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="intro">
+                <h1>Who We Are</h1>
+                <p class="intro-text">
+                    We're a group of writers, thinkers, and creators who believe the internet deserves better stories. AnekDotes is our attempt to build something meaningful together.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="avatar">SB</div>
+                    <h3>Sandipani Basu</h3>
+                    <div class="role">Co-Founder</div>
+                    <p>Passionate about creating spaces where authentic voices can thrive and meaningful conversations can flourish.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="avatar">SB</div>
+                    <h3>Sounak Basu</h3>
+                    <div class="role">Co-Founder</div>
+                    <p>Believes in the power of storytelling to connect people and build communities that matter.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="avatar">RB</div>
+                    <h3>Rineeta Basu</h3>
+                    <div class="role">Co-Founder</div>
+                    <p>Dedicated to building platforms that put people first and celebrate genuine human expression.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="avatar">AS</div>
+                    <h3>Akanksha Sharma</h3>
+                    <div class="role">Co-Founder</div>
+                    <p>Committed to reimagining how we share ideas and create meaningful digital experiences.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="avatar">HT</div>
+                    <h3>Hayes Thrasher</h3>
+                    <div class="role">Co-Founder</div>
+                    <p>Focused on building technology that serves writers and readers, not algorithms and metrics.</p>
+                </div>
+            </div>
+
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>
+                    We're building AnekDotes to be a home for thoughtful writing and genuine conversation. A place where your words matter more than your follower count, and where stories can breathe without the pressure of virality. This is our commitment to reimagining what a blogging platform can be.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AnekDotes. Reimagining how we share stories.</p>
+        </div>
+    </footer>
+</body>
+</html>
