@@ -30,10 +30,35 @@
             border-bottom: 1px solid #e5e5e5;
         }
 
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .logo {
             font-size: 24px;
             font-weight: 600;
             letter-spacing: -0.5px;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a.active {
             color: #1a1a1a;
         }
 
@@ -138,6 +163,16 @@
         }
 
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 24px;
+            }
+
             h1 {
                 font-size: 42px;
             }
@@ -164,7 +199,13 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">AnekDotes</div>
+            <div class="header-content">
+                <a href="index.html" class="logo">AnekDotes</a>
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">Who We Are</a>
+                </nav>
+            </div>
         </div>
     </header>
 
