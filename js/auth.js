@@ -1,5 +1,5 @@
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from './firebase-config.js';
-import { createUserProfile } from './database-functions.js';
+import { createUserProfile } from './database.js';
 
 // Sign up new user
 async function signUp(email, password, name) {
