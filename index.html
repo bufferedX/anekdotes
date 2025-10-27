@@ -430,17 +430,15 @@
         </div>
     </div>
 
-    <script type="module">
-        import { signUp, signIn, logOut, onAuthChange } from './js/auth.js';
-
-        // Modal functions
+    <!-- Modal & Auth Functions (Regular Script, Not Module) -->
+    <script>
+        // Modal functions - these need to be globally accessible
         window.openModal = function(type) {
             document.getElementById(`${type}-modal`).classList.add('active');
         };
 
         window.closeModal = function(type) {
             document.getElementById(`${type}-modal`).classList.remove('active');
-            // Clear error messages
             const errorEl = document.getElementById(`${type}-error`);
             if (errorEl) errorEl.style.display = 'none';
         };
@@ -450,7 +448,20 @@
             openModal(to);
         };
 
-        // Sign Up
+        // Close modal on outside click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <script type="module">
+        import { signUp, signIn, logOut, onAuthChange } from './js/auth.js';
+
+        // Sign Up Handler
         window.handleSignUp = async function() {
             const name = document.getElementById('signup-name').value.trim();
             const email = document.getElementById('signup-email').value.trim();
@@ -494,6 +505,7 @@
                     closeModal('signup');
                 }, 1500);
             } catch (error) {
+                console.error('Signup error:', error);
                 let errorMessage = 'Error creating account';
                 if (error.code === 'auth/email-already-in-use') {
                     errorMessage = 'Email already in use';
@@ -507,7 +519,7 @@
             }
         };
 
-        // Sign In
+        // Sign In Handler
         window.handleSignIn = async function() {
             const email = document.getElementById('signin-email').value.trim();
             const password = document.getElementById('signin-password').value;
@@ -525,6 +537,7 @@
                 await signInWithEmailAndPassword(auth, email, password);
                 closeModal('signin');
             } catch (error) {
+                console.error('Signin error:', error);
                 let errorMessage = 'Error signing in';
                 if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
                     errorMessage = 'Invalid email or password';
@@ -536,7 +549,7 @@
             }
         };
 
-        // Sign Out
+        // Sign Out Handler
         window.handleSignOut = async function() {
             try {
                 await signOut(auth);
@@ -559,15 +572,6 @@
                 authSection.style.display = 'flex';
                 userSection.style.display = 'none';
             }
-        });
-
-        // Close modal on outside click
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
         });
 
         // Enter key to submit
